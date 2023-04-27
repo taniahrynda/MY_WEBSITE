@@ -280,3 +280,21 @@ body {
   margin-left: 260px;
   padding: 25px 25px;
 }
+
+.wrapper {
+  padding: 150px;
+  max-width: 1130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section_header {
+  width: calc(33%-15px);
+  height: 340px;
+}
+
+.card img {
+  width: 200px;
+  height: 300px;
+}
