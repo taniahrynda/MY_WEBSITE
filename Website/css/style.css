@@ -283,7 +283,7 @@ body {
 
 .wrapper {
   margin: 0;
-  padding: 150px 150px 0;
+  padding: 100px 150px 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -301,7 +301,7 @@ body {
   padding: 10px 20px 22px 20px;
 }
 
-.details {
+.card2 {
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 900;
@@ -329,4 +329,20 @@ body {
   background-color: transparent;
   color: rgb(215, 230, 5);
   background-color: #0f0e0e;
+}
+
+.card.hide {
+  display: none;
+}
+
+.search {
+  padding: 150px 0 0 0;
+  margin-left: 400px;
+}
+.search_book {
+  width: 800px;
+  height: 35px;
+  font-size: 25px;
+  border-color: rgb(215, 230, 5);
+  text-align: center;
 }
