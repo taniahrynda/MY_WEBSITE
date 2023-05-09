@@ -346,3 +346,30 @@ body {
   border-color: rgb(215, 230, 5);
   text-align: center;
 }
+.items {
+  display: flex;
+  background-color: #f2ede7;
+  border-radius: 10px;
+  width: 130px;
+  margin-right: 15px;
+}
+.items__control {
+  width: 80px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  text-align: center;
+  border-color: #0f0e0e;
+}
+.items__control:hover {
+  background: rgb(215, 230, 5);
+  color: #fff;
+}
+
+.details-wrapper {
+  display: flex;
+  padding: 10px;
+}
+
+.items__current {
+  width: 20px;
+}
