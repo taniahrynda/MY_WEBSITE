@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Реєстрація</title>
+  </head>
+  <body>
+    <h1>Форма реєстрації</h1>
+    <form action="/register" method="POST">
+      <label for="firstName">Ім'я:</label>
+      <input type="text" id="firstName" name="firstName" required /><br />
+
+      <label for="lastName">Прізвище:</label>
+      <input type="text" id="lastName" name="lastName" required /><br />
+
+      <label for="email">Електронна пошта:</label>
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required /><br />
+
+      <label for="gender">Стать:</label>
+      <input type="radio" id="genderMale" name="gender" value="male" required />
+      <label for="genderMale">Чоловіча</label>
+      <input
+        type="radio"
+        id="genderFemale"
+        name="gender"
+        value="female"
+        required
+      />
+      <label for="genderFemale">Жіноча</label><br />
+
+      <label for="dateOfBirth">Дата народження:</label>
+      <input type="date" id="dateOfBirth" name="dateOfBirth" required /><br />
+
+      <label for="city">Місто:</label>
+      <input type="text" id="city" name="city" required /><br />
+
+      <label for="phoneNumber">Номер телефону:</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" required /><br />
+
+      <input type="submit" value="Зареєструватись" />
+    </form>
+  </body>
+</html>
