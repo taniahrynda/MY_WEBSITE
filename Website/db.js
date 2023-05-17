@@ -14,5 +14,13 @@ connection.connect((err) => {
     console.log("Підключення до бази даних встановлено");
   }
 });
+connection.query("SELECT * FROM CUSTOMER", (err, results) => {
+  if (err) {
+    console.error("Помилка виконання запиту:", err);
+    return;
+  }
+  console.log("Результати SELECT запиту:", results);
+  console.log("Результати SELECT запиту:", results[1]["LASTNAME"]);
+});
 
 module.exports = connection;
