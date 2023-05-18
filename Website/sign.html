@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1>Форма реєстрації</h1>
-    <form action="/register" method="POST">
+    <form id="registrationForm" action="/register" method="post">
       <label for="firstName">Ім'я:</label>
       <input type="text" id="firstName" name="firstName" required /><br />
 
@@ -39,7 +39,8 @@
       <label for="phoneNumber">Номер телефону:</label>
       <input type="tel" id="phoneNumber" name="phoneNumber" required /><br />
 
-      <input type="submit" value="Зареєструватись" />
+      <button type="submit">Зареєструватись</button>
     </form>
+    <script src="server.js"></script>
   </body>
 </html>
