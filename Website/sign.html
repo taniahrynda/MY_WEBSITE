@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Форма реєстрації</h1>
+  <form action="check.php" method="POST">
+    <label for="name">Ім’я:</label>
+    <input type="text" name="name" id="name" required><br>
+
+    <label for="surname">Прізвище:</label>
+    <input type="text" name="surname" id="surname" required><br>
+
+    <label for="email">Електронна пошта:</label>
+    <input type="email" name="email" id="email" required><br>
+
+    <label for="password">Пароль:</label>
+    <input type="password" name="password" id="password" required><br>
+
+    <label for="gender">Стать:</label>
+    <select name="gender" id="gender">
+      <option value="M">Ч</option>
+      <option value="W">Ж</option>
+    </select><br>
+
+    <label for="dateOfBirth">Дата народження:</label>
+    <input type="date" name="dateOfBirth" id="dateOfBirth" required><br>
+
+    <label for="city">Місто:</label>
+    <input type="text" name="city" id="city" required><br>
+
+    <label for="phoneNumber">Номер телефону:</label>
+    <input type="tel" name="phoneNumber" id="phoneNumber" required><br>
+
+    <button type="submit">Зареєструватись</button>
+</body>
+</html>
