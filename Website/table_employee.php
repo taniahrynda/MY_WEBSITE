@@ -10,7 +10,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $query = "SELECT * FROM `employee`";
+    $query = "SELECT `employee`.`ID`, `employee`.`FIRSTNAME`, `employee`.`LASTNAME`, `employee`.`POSITION`, `employee`.`DATE_EMPLOYMENT`, `employee`.`RATE`, `office`.`CITY`, `office`.`STREET` FROM `employee` JOIN `office` ON `employee`.`OFFICE_ID` = `office`.`ID` ORDER BY `employee`.`ID`";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 

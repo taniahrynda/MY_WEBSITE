@@ -32,7 +32,8 @@
           <th>Посада</th>
           <th>Дана працевлаштування</th>
           <th>Зарплата</th>
-          <th>Місце роботи</th>
+          <th>Місто</th>
+          <th>Вулиця</th>
          
         </tr>
 
@@ -44,7 +45,8 @@
             <td><?php echo $row['POSITION']; ?></td>
             <td><?php echo $row['DATE_EMPLOYMENT']; ?></td>
             <td><?php echo $row['RATE']; ?></td>
-            <td><?php echo $row['OFFICE_ID']; ?></td>
+            <td><?php echo $row['CITY']; ?></td>
+            <td><?php echo $row['STREET']; ?></td>
            
           </tr>
         <?php endforeach; ?>
