@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="section_panel">
+      <div class="container">
+        <button class="btn_book">Переглянути список всіх книг</button>
+        <button class="btn_cust">Переглянути список клієнтів</button>
+        <button class="btn_emp">Переглянути список працівників магазину</button>
+        <button class="btn_ord">Переглянути список замовлень</button>
+      </div>
+    </section>
+
+    <script>
+      const buttonBook = document.querySelector(".btn_book");
+      const buttonCust = document.querySelector(".btn_cust");
+      const buttonEmp = document.querySelector(".btn_emp");
+      const buttonOrd = document.querySelector(".btn_ord");
+
+      buttonBook.addEventListener("click", function () {
+        window.location.href = "table_book.php";
+      });
+      buttonCust.addEventListener("click", function () {
+        window.location.href = "table_customer.php";
+      });
+      buttonEmp.addEventListener("click", function () {
+        window.location.href = "table_employee.php";
+      });
+      buttonOrd.addEventListener("click", function () {
+        window.location.href = "table_order.php";
+      });
+    </script>
+  </body>
+</html>
