@@ -63,13 +63,13 @@ $mysql->close();
         <div class="user-info">
             <h2>Вітаємо, <?php echo $user['FIRSTNAME'] . ' ' . $user['LASTNAME']; ?>!</h2>
             <p>Електронна пошта: <?php echo $user['EMAIL']; ?></p>
+            <p>Пароль: <?php echo $user['PASS_WORD']; ?></p>
             <p>Стать: <?php echo $user['GENDER']; ?></p>
             <p>Дата народження: <?php echo $user['DATE_BIRTH']; ?></p>
             <p>Місто: <?php echo $user['CITY']; ?></p>
             <p>Номер телефону: <?php echo $user['PHONE_NUMBERS']; ?></p>
-            <!-- Додайте інші дані користувача, які ви хочете відобразити -->
-
-            <!-- Додайте посилання або кнопки для редагування акаунту, зміни пароля або виходу -->
+            <p>Номер телефону: <?php echo $user['PHONE_NUMBERS']; ?></p>
+        
         </div>
     </div>
 </body>
