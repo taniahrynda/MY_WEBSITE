@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
 
@@ -11,8 +13,9 @@ if (count($user) == 0) {
     exit();
 }
 
-setcookie('customer_id', $user['ID'], time() + 3600, "/");
+$_SESSION['customer_id'] = $user['ID'];
 $mysql->close();
 
-header('Location:/book.html');
+header('Location: acc.php');
 ?>
+
