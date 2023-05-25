@@ -22,7 +22,7 @@ window.addEventListener("click", function (event) {
       counterElement.innerText =
         parseInt(counterElement.innerText) + parseInt(productInfo.counter);
     } else {
-      const cartItemHTML = `<div class="cart-item" data-id="${productInfo.id}">
+      const cartItemHTML = `<div class="cart-item"  data-id="${productInfo.id}">
     <div class="cart-item__top">
       <div class="cart-item__img">
         <img src="${productInfo.imgSrc}" alt="${productInfo.title}">

@@ -33,15 +33,31 @@
         <h1 class="contact_title">Зв’яжіться з нами</h1>
       </div>
       <div class="contact_inform">
-        <form action="" class="contact_form">
-          <input type="text" class="texttb" placeholder="Ім’я" />
-          <input type="text" class="texttb" placeholder="Прізвище" />
-          <input type="email" class="texttb" placeholder="Електрона адреса" />
+        <form action="send_email.php" method="POST" class="contact_form">
+          <input
+            type="text"
+            class="texttb"
+            name="first_name"
+            placeholder="Ім’я"
+          />
+          <input
+            type="text"
+            class="texttb"
+            name="last_name"
+            placeholder="Прізвище"
+          />
+          <input
+            type="email"
+            class="texttb"
+            name="email"
+            placeholder="Електрона адреса"
+          />
           <textarea
+            name="message"
             placeholder="Твоє повідомлення"
             style="width: 373px; height: 151px; background-color: #d0d4ee"
           ></textarea>
-          <input type="submit" class="btn" value="Надіслати"
+          <input type="submit" class="btn" value="Надіслати" />
         </form>
       </div>
     </section>
