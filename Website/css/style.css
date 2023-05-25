@@ -326,6 +326,10 @@ body {
   font-size: 20px;
   text-align: center;
 }
+.btn {
+  padding: 0px;
+  margin: 0;
+}
 .buttons:hover {
   background-color: transparent;
   color: rgb(215, 230, 5);

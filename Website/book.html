@@ -38,8 +38,63 @@
         />
       </div>
     </div>
-    <div class="container mb-5">
+    
       <div class="wrapper">
+        				<!-- Корзина -->
+                <form action="auth.php" method="POST">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <h5 class="card-title">Ваше замовлення</h4>
+                    
+                      <!-- cart-wrapper -->
+                      <div class="cart-wrapper">
+          
+                        <!-- 
+                        <div class="cart-item" data-id="2">
+                          <div class="cart-item__top">
+                            <div class="cart-item__img">
+                              <img src="img/book2.jpg" alt="">
+                            </div>
+                            <div class="cart-item__desc">
+                              <div class="cart-item__title">НЕ ОЗИРАЙСЯ І МОВЧИ</div>
+                              
+                              
+                              <div class="cart-item__details">
+          
+                                <div class="items items--small counter-wrapper">
+                                  <div class="items__control" data-action="minus">-</div>
+                                  <div class="items__current" data-counter="">1</div>
+                                  <div class="items__control" data-action="plus">+</div>
+                                </div>
+          
+                                <div class="price">
+                                  <div class="price__currency">250 ₴</div>
+                                </div>
+          
+                              </div>
+                              
+          
+                            </div>
+                          </div>
+                        </div>
+                      -->
+          
+                      </div>
+                     
+          
+                      
+                      <div class="cart-total">
+                        
+                        <p><span class="h5">Загалом:</span> <span class="total-price">0</span> <span class="gryvny">₴</span></p>
+                      </div>
+                  
+                    </div>
+                        <button type="submit" class="btn">Купити</button>
+                   
+          
+                  </div>
+                  <!-- // Корзина -->
+                  </form>
         <div class="card" data-id="1">
           <img class="product_img" src="img/fd41bdbook1.jpg" alt="book1" />
           <div class="content">
@@ -888,74 +943,12 @@
           <button data-cart type="button" class="buttons">В корзину</button>
         </div>
       </div>
-      <div class="col-md-4">
+      
 
-				<!-- Корзина -->
-        <form action="auth.php" method="POST">
-				<div class="card mb-4">
-					<div class="card-body">
-						<h5 class="card-title">Ваше замовлення</h4>
-					
-						<!-- cart-wrapper -->
-						<div class="cart-wrapper">
-
-							<!-- 
-							<div class="cart-item" data-id="2">
-								<div class="cart-item__top">
-									<div class="cart-item__img">
-										<img src="img/book2.jpg" alt="">
-									</div>
-									<div class="cart-item__desc">
-										<div class="cart-item__title">НЕ ОЗИРАЙСЯ І МОВЧИ</div>
-										
-										
-										<div class="cart-item__details">
-
-											<div class="items items--small counter-wrapper">
-												<div class="items__control" data-action="minus">-</div>
-												<div class="items__current" data-counter="">1</div>
-												<div class="items__control" data-action="plus">+</div>
-											</div>
-
-											<div class="price">
-												<div class="price__currency">250 ₴</div>
-											</div>
-
-										</div>
-										
-
-									</div>
-								</div>
-							</div>
-						-->
-
-						</div>
-						<!-- // cart-wrapper -->
-
-						<!-- Стоимость заказа -->
-						<div class="cart-total">
-							
-							<p><span class="h5">Загалом:</span> <span class="total-price">0</span> <span class="gryvny">₴</span></p>
-						</div>
-						<!-- // Стоимость заказа -->
-
-					</div>
-
-					<!-- Оформить заказ -->
-					<div id="order-form" class="card-body border-top">
-						
-							<button type="submit" class="btn btn-primary">Купити</button>
-						
-					</div>
-					<!-- // Оформить заказ -->
-
-				</div>
-				<!-- // Корзина -->
-        </form>
-
+			
 			</div>
-    </div>
-    </div>
+    
+    
     <script type="text/javascript">
       const elastic = document.querySelector("#elastic");
 
