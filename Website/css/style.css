@@ -456,8 +456,8 @@ body {
   margin-right: 300px;
 }
 .btn_nav {
-  width: 150px;
-  height: 30px;
+  width: 210px;
+  height: 40px;
   border-radius: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -472,4 +472,16 @@ body {
   margin-top: 10px;
   border-color: #000000;
   text-align: center;
+}
+.sign {
+  margin-left: 180px;
+}
+.else {
+  margin-left: 400px;
+  display: flex;
+}
+
+.sign__link {
+  margin-top: 20px;
+  margin-left: 20px;
 }
