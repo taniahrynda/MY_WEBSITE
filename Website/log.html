@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="sign">
+      <div class="container_sign">
+        <h1>Форма авторизації</h1>
+        <form action="auth.php" method="POST">
+          <input
+            class="sign_text"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Введіть електрону адресу"
+            required
+          /><br />
+
+          <input
+            class="sign_text"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Введіть пароль"
+            required
+          /><br />
+
+          <button class="btn_nav" type="submit">Увійти</button>
+        </form>
+      </div>
+      <div class="else">
+        <p>Якщо ви ще не маєте акаунту натисніть на кнопку "Увійти"</p>
+        <a class="sign__link" href="sign.html">Увійти</a>
+      </div>
+    </div>
+    <script>
+      function getCookie(name) {}
+
+      window.onload = function () {
+        var customerId = getCookie("CUSTOMER_ID");
+        console.log("CUSTOMER_ID:", customerId);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link
+      rel="stylesheet"
+      href="css/style.css"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="sign">
+    <div class="container_sign">
+  <h1>Форма реєстрації</h1>
+  <form action="check.php" method="POST">
+  
+    <input class = "sign_text" type="text" name="name" id="name" placeholder="Введіть ім’я" required><br>
+
+   
+    <input class = "sign_text" type="text" name="surname" id="surname" placeholder="Введіть прізвище" required><br>
+
+   
+    <input class = "sign_text" type="email" name="email" id="email" placeholder="Введіть електрону адресу" required><br>
+
+    
+    <input class = "sign_text" type="password" name="password" id="password" placeholder="Введіть пароль" required><br>
+
+   
+    <select class = "sign_text" name="gender" id="gender" placeholder="Виберіть стать">
+      <option value="M">Ч</option>
+      <option value="W">Ж</option>
+    </select><br>
+
+    
+    <input class = "sign_text" type="date" name="dateOfBirth" id="dateOfBirth" placeholder="Введіть дату народження" required><br>
+
+    
+    <input class = "sign_text" type="text" name="city" id="city"  placeholder="Введіть місто" required><br>
+
+    
+    <input class = "sign_text" type="tel" name="phoneNumber" id="phoneNumber" placeholder="Введіть номер телефону" required><br>
+
+    <button  class  = "btn_nav" type="submit">Зареєструватись</button>
+  </div>
+  <div class="else">
+ <p>Якщо ви вже є зареєстровані натисні на "Увійти"</p>
+ <a class="sign__link" href="log.html">Увійти</a>
+</div>
+  </div>
+</body>
+</html>
