@@ -105,6 +105,26 @@
   });
 </script>
 
+<button id="updateButton">Оновити</button>
+
+<div id="updateForm" style="display: none;">
+  <h3>Видалення товару</h3>
+  <form action="update_book.php" method="POST">
+  
+    <input class = "sign_text" type="text" name="product_id"  placeholder="Введіть ID товару, який хочети видалити" required><br>
+    <input class = "sign_text" type="text" name="price_book"  placeholder="Введіть нову ціну товару" required><br>
+
+    <input type="submit" value="Підтвердити оновлення" />
+  </form>
+</div>
+
+<script>
+  var deleteButton = document.getElementById("updateButton");
+  var deleteForm = document.getElementById("updateForm");
+
+  deleteButton.addEventListener("click", function() {
+    deleteForm.style.display = "block";
+  });
 </script>
     <?php endif; ?>
   </body>
