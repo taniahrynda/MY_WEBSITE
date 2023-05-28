@@ -1,29 +1,30 @@
+-- coding: utf-8
 USE WEBSITE
 
--- Перегляд наступної інформації про книги: назва, автор, ціна --
+-- РџРµСЂРµРіР»СЏРґ РЅР°СЃС‚СѓРїРЅРѕС— С–РЅС„РѕСЂРјР°С†С–С— РїСЂРѕ РєРЅРёРіРё: РЅР°Р·РІР°, Р°РІС‚РѕСЂ, С†С–РЅР° --
 SELECT NAME, FIRSTNAME, LASTNAME, PRICE 
 FROM BOOK, AUTHOR
 WHERE AUTHOR_ID=AUTHOR.ID
 
--- Перегляд усіх книг, що належать до різновиду літератири Х --
+-- РџРµСЂРµРіР»СЏРґ СѓСЃС–С… РєРЅРёРі, С‰Рѕ РЅР°Р»РµР¶Р°С‚СЊ РґРѕ СЂС–Р·РЅРѕРІРёРґСѓ Р»С–С‚РµСЂР°С‚РёСЂРё РҐ --
 SELECT NAME
 FROM BOOK, CATEGORY
 WHERE CATEGORY_ID=CATEGORY.ID
-AND TYPY_OF_BOOK IN ('Художня література')
+AND TYPY_OF_BOOK IN ('РҐСѓРґРѕР¶РЅСЏ Р»С–С‚РµСЂР°С‚СѓСЂР°')
 
--- Перегляд книг написаних мовою Х --
+-- РџРµСЂРµРіР»СЏРґ РєРЅРёРі РЅР°РїРёСЃР°РЅРёС… РјРѕРІРѕСЋ РҐ --
 SELECT NAME
 FROM BOOK, CATEGORY
 WHERE CATEGORY_ID=CATEGORY.ID
-AND LANGUAGE_BOOK IN ('Німецька')
+AND LANGUAGE_BOOK IN ('РќС–РјРµС†СЊРєР°')
 
--- Перегляд книг, що мають формат Х --
+-- РџРµСЂРµРіР»СЏРґ РєРЅРёРі, С‰Рѕ РјР°СЋС‚СЊ С„РѕСЂРјР°С‚ РҐ --
 SELECT NAME
 FROM BOOK, CATEGORY
 WHERE CATEGORY_ID=CATEGORY.ID
-AND FORMAT_BOOK IN ('Електронна')
+AND FORMAT_BOOK IN ('Р•Р»РµРєС‚СЂРѕРЅРЅР°')
 
--- Список книг, які найчасті купляли клієнти в Х році --
+-- РЎРїРёСЃРѕРє РєРЅРёРі, СЏРєС– РЅР°Р№С‡Р°СЃС‚С– РєСѓРїР»СЏР»Рё РєР»С–С”РЅС‚Рё РІ РҐ СЂРѕС†С– --
 
 SELECT NAME, COUNT(*) AS COUNT_BOOK
 FROM BOOK JOIN ORDERS
@@ -33,7 +34,7 @@ WHERE YEAR(DATE_ORDER)=2020
 GROUP BY NAME
 ORDER BY COUNT_BOOK DESC
 
--- Cписок усії книг, які купив покупець Х і скільки він заплатив--
+-- CРїРёСЃРѕРє СѓСЃС–С— РєРЅРёРі, СЏРєС– РєСѓРїРёРІ РїРѕРєСѓРїРµС†СЊ РҐ С– СЃРєС–Р»СЊРєРё РІС–РЅ Р·Р°РїР»Р°С‚РёРІ--
 SELECT FIRSTNAME, LASTNAME, NAME, SUM(AMOUNT) AS TOTAL_PRICE
 FROM CUCTOMER JOIN ORDERS
 ON CUSTOMER_ID=CUCTOMER.ID
@@ -41,7 +42,7 @@ JOIN BOOK ON BOOK_ID=BOOK.ID
 WHERE CUCTOMER.ID=5
 GROUP BY FIRSTNAME, LASTNAME, NAME
 
---Рейтинг категорій--
+--Р РµР№С‚РёРЅРі РєР°С‚РµРіРѕСЂС–Р№--
 SELECT TYPY_OF_BOOK, SUM(NUMBERS) AS TOTAL_NUMBERS  
 FROM BOOK JOIN CATEGORY
 ON CATEGORY_ID=CATEGORY.ID
@@ -56,7 +57,7 @@ JOIN ORDERS ON BOOK.ID=BOOK_ID
 GROUP BY TYPY_OF_BOOK, LANGUAGE_BOOK, FORMAT_BOOK
 ORDER BY TOTAL_NUMBERS DESC
 
--- Список клієнтів, які купляли в магазині більше 5 разів--
+-- РЎРїРёСЃРѕРє РєР»С–С”РЅС‚С–РІ, СЏРєС– РєСѓРїР»СЏР»Рё РІ РјР°РіР°Р·РёРЅС– Р±С–Р»СЊС€Рµ 5 СЂР°Р·С–РІ--
 SELECT FIRSTNAME, LASTNAME, COUNT(*) AS ORDERS_COUNT
 FROM CUCTOMER JOIN ORDERS
 ON CUSTOMER_ID=CUCTOMER.ID
@@ -64,18 +65,18 @@ GROUP BY FIRSTNAME, LASTNAME
 HAVING COUNT(*) > 5
 
 
---РОЗШИРЕНЕ ЗАВДАННЯ--
+--Р РћР—РЁРР Р•РќР• Р—РђР’Р”РђРќРќРЇ--
 
 
--- Кількість проданих книг Х автора у У році--
+-- РљС–Р»СЊРєС–СЃС‚СЊ РїСЂРѕРґР°РЅРёС… РєРЅРёРі РҐ Р°РІС‚РѕСЂР° Сѓ РЈ СЂРѕС†С–--
 SELECT  NAME, COUNT(*) AS NUMBER_ORDERS
 FROM AUTHOR JOIN BOOK
 ON AUTHOR_ID=AUTHOR.ID
 JOIN ORDERS ON BOOK_ID=BOOK.ID
-WHERE LASTNAME ='Костенко' AND YEAR(DATE_ORDER)=2021
+WHERE LASTNAME ='РљРѕСЃС‚РµРЅРєРѕ' AND YEAR(DATE_ORDER)=2021
 GROUP BY NAME
 
---Прізвище, ім’я автора книги якого були куплені більше 5 разів--
+--РџСЂС–Р·РІРёС‰Рµ, С–РјвЂ™СЏ Р°РІС‚РѕСЂР° РєРЅРёРіРё СЏРєРѕРіРѕ Р±СѓР»Рё РєСѓРїР»РµРЅС– Р±С–Р»СЊС€Рµ 5 СЂР°Р·С–РІ--
 SELECT FIRSTNAME, LASTNAME, COUNT (NUMBERS) AS COUNT_NUMBERS
 FROM AUTHOR JOIN BOOK
 ON AUTHOR_ID=AUTHOR.ID
@@ -83,14 +84,14 @@ JOIN ORDERS ON BOOK_ID=BOOK.ID
 GROUP BY FIRSTNAME, LASTNAME
 HAVING COUNT (NUMBERS)>5
 
---Статистика замовлень книжок в різні міста України--
+--РЎС‚Р°С‚РёСЃС‚РёРєР° Р·Р°РјРѕРІР»РµРЅСЊ РєРЅРёР¶РѕРє РІ СЂС–Р·РЅС– РјС–СЃС‚Р° РЈРєСЂР°С—РЅРё--
 
 SELECT CITY, COUNT(*) AS ORDERS_COUNT
 FROM BOOK JOIN ORDERS
 ON BOOK_ID=ORDERS.ID
 JOIN CUCTOMER ON CUSTOMER_ID=ORDERS.ID
 GROUP BY CITY
--- Статистика продажу книжок різних категорій--
+-- РЎС‚Р°С‚РёСЃС‚РёРєР° РїСЂРѕРґР°Р¶Сѓ РєРЅРёР¶РѕРє СЂС–Р·РЅРёС… РєР°С‚РµРіРѕСЂС–Р№--
 
 SELECT TYPY_OF_BOOK, LANGUAGE_BOOK, FORMAT_BOOK, COUNT(*) AS ORDERS_COUNT
 FROM CATEGORY JOIN BOOK
@@ -98,7 +99,7 @@ ON CATEGORY_ID=CATEGORY.ID
 JOIN ORDERS ON BOOK_ID=BOOK.ID
 GROUP BY TYPY_OF_BOOK, LANGUAGE_BOOK, FORMAT_BOOK
 
--- Показати книги, які ніхто не купив--
+-- РџРѕРєР°Р·Р°С‚Рё РєРЅРёРіРё, СЏРєС– РЅС–С…С‚Рѕ РЅРµ РєСѓРїРёРІ--
 SELECT NAME
 FROM BOOK
 WHERE NOT EXISTS(
@@ -106,39 +107,39 @@ SELECT * FROM ORDERS
 WHERE BOOK_ID=BOOK.ID)
 
 
--- Показати список клієнтів, в яких сума покупки перевищує 1000 грн --
-SELECT FIRSTNAME, LASTNAME, ЗАГАЛЬНА_СУМА_ПОКУПКИ
+-- РџРѕРєР°Р·Р°С‚Рё СЃРїРёСЃРѕРє РєР»С–С”РЅС‚С–РІ, РІ СЏРєРёС… СЃСѓРјР° РїРѕРєСѓРїРєРё РїРµСЂРµРІРёС‰СѓС” 1000 РіСЂРЅ --
+SELECT FIRSTNAME, LASTNAME, Р—РђР“РђР›Р¬РќРђ_РЎРЈРњРђ_РџРћРљРЈРџРљР
 FROM 
-(SELECT FIRSTNAME, LASTNAME, SUM(AMOUNT) AS  ЗАГАЛЬНА_СУМА_ПОКУПКИ
+(SELECT FIRSTNAME, LASTNAME, SUM(AMOUNT) AS  Р—РђР“РђР›Р¬РќРђ_РЎРЈРњРђ_РџРћРљРЈРџРљР
 FROM CUCTOMER JOIN ORDERS
 ON CUSTOMER_ID=CUCTOMER.ID
 GROUP BY FIRSTNAME, LASTNAME
-) AS ПІДСУМКИ
-WHERE ЗАГАЛЬНА_СУМА_ПОКУПКИ>1000
+) AS РџР†Р”РЎРЈРњРљР
+WHERE Р—РђР“РђР›Р¬РќРђ_РЎРЈРњРђ_РџРћРљРЈРџРљР>1000
 
--- Статистика продажу книг різних видавнивницт по роках--
-SELECT YEAR_ORDER, NAME, КІЛЬКІСТЬ_ЗАМОВЛЕНЬ, СУМА_ЗАМОВЛЕНЬ
-FROM(SELECT YEAR(DATE_ORDER) AS YEAR_ORDER, PUBLICATION.NAME AS NAME, SUM(NUMBERS) AS [КІЛЬКІСТЬ_ЗАМОВЛЕНЬ], SUM(AMOUNT) AS [СУМА_ЗАМОВЛЕНЬ]
+-- РЎС‚Р°С‚РёСЃС‚РёРєР° РїСЂРѕРґР°Р¶Сѓ РєРЅРёРі СЂС–Р·РЅРёС… РІРёРґР°РІРЅРёРІРЅРёС†С‚ РїРѕ СЂРѕРєР°С…--
+SELECT YEAR_ORDER, NAME, РљР†Р›Р¬РљР†РЎРўР¬_Р—РђРњРћР’Р›Р•РќР¬, РЎРЈРњРђ_Р—РђРњРћР’Р›Р•РќР¬
+FROM(SELECT YEAR(DATE_ORDER) AS YEAR_ORDER, PUBLICATION.NAME AS NAME, SUM(NUMBERS) AS [РљР†Р›Р¬РљР†РЎРўР¬_Р—РђРњРћР’Р›Р•РќР¬], SUM(AMOUNT) AS [РЎРЈРњРђ_Р—РђРњРћР’Р›Р•РќР¬]
 FROM PUBLICATION JOIN BOOK
 ON PUBLICATION_ID=PUBLICATION.ID
 JOIN ORDERS ON BOOK_ID=BOOK.ID
 GROUP BY PUBLICATION.NAME, YEAR(DATE_ORDER))
-AS ПІДСУМКИ
+AS РџР†Р”РЎРЈРњРљР
 
--- Статистика продажу книг в різні міста в Х році--
-SELECT YEAR_ORDER, CITY, КІЛЬКІСТЬ_ЗАМОВЛЕНЬ, СУМА_ЗАМОВЛЕНЬ
-FROM(SELECT YEAR(DATE_ORDER) AS YEAR_ORDER, CITY, SUM(NUMBERS) AS [КІЛЬКІСТЬ_ЗАМОВЛЕНЬ], SUM(AMOUNT) AS [СУМА_ЗАМОВЛЕНЬ]
+-- РЎС‚Р°С‚РёСЃС‚РёРєР° РїСЂРѕРґР°Р¶Сѓ РєРЅРёРі РІ СЂС–Р·РЅС– РјС–СЃС‚Р° РІ РҐ СЂРѕС†С–--
+SELECT YEAR_ORDER, CITY, РљР†Р›Р¬РљР†РЎРўР¬_Р—РђРњРћР’Р›Р•РќР¬, РЎРЈРњРђ_Р—РђРњРћР’Р›Р•РќР¬
+FROM(SELECT YEAR(DATE_ORDER) AS YEAR_ORDER, CITY, SUM(NUMBERS) AS [РљР†Р›Р¬РљР†РЎРўР¬_Р—РђРњРћР’Р›Р•РќР¬], SUM(AMOUNT) AS [РЎРЈРњРђ_Р—РђРњРћР’Р›Р•РќР¬]
 FROM CUCTOMER JOIN ORDERS
 ON CUSTOMER_ID=CUCTOMER.ID
 WHERE YEAR(DATE_ORDER)=2021
 GROUP BY CITY, YEAR(DATE_ORDER) )
-AS ПІДСУМКИ
+AS РџР†Р”РЎРЈРњРљР
 
--- Скільки книг продав кожен працівник--
+-- РЎРєС–Р»СЊРєРё РєРЅРёРі РїСЂРѕРґР°РІ РєРѕР¶РµРЅ РїСЂР°С†С–РІРЅРёРє--
 SELECT FIRSTNAME, LASTNAME, TOTAL
 FROM(SELECT FIRSTNAME, LASTNAME, SUM(NUMBERS) AS TOTAL
 FROM
 EMPLOYEE JOIN ORDERS
 ON EMPLOYEE_ID=EMPLOYEE.ID
-GROUP BY FIRSTNAME, LASTNAME) AS ПІДСУМОК
+GROUP BY FIRSTNAME, LASTNAME) AS РџР†Р”РЎРЈРњРћРљ
 
